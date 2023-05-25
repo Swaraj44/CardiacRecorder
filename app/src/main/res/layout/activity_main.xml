@@ -99,67 +99,13 @@
             android:textColor="@color/primary"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
-
-            />
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.56" />
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-    <!--<TextView-->
-    <!--    android:id="@+id/textView6"-->
-    <!--    android:layout_width="wrap_content"-->
-    <!--    android:layout_height="wrap_content"-->
-    <!--    android:background="?attr/selectableItemBackground"-->
-    <!--    android:clickable="true"-->
-    <!--    android:onClick="SIGNUP"-->
-    <!--    android:paddingLeft="10dp"-->
-    <!--    android:paddingRight="10dp"-->
-    <!--    android:text="Sign up"-->
-    <!--    android:textColor="#5D9BE6"-->
-    <!--    android:textSize="20dp"-->
-    <!--    android:textStyle="italic"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toTopOf="parent"-->
-    <!--    app:layout_constraintVertical_bias="0.906"-->
-    <!--    android:focusable="true"-->
-    <!--    tools:ignore="UsingOnClickInXml" />-->
-
-    <!--<TextView-->
-    <!--    android:id="@+id/textView13"-->
-    <!--    android:layout_width="wrap_content"-->
-    <!--    android:layout_height="wrap_content"-->
-    <!--    android:text="Have no account yet ?"-->
-    <!--    android:textColor="#000000"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintHorizontal_bias="0.496"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toTopOf="parent"-->
-    <!--    app:layout_constraintVertical_bias="0.853" />-->
-
-    <!--<ImageView-->
-    <!--    android:id="@+id/imageView11"-->
-    <!--    android:layout_width="201dp"-->
-    <!--    android:layout_height="190dp"-->
-    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toTopOf="parent"-->
-    <!--    app:layout_constraintVertical_bias="0.031"-->
-    <!--    app:srcCompat="@drawable/profile_pic" />-->
-
-
 </ScrollView>
 
 
