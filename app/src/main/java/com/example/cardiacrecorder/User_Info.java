@@ -1,8 +1,7 @@
 package com.example.cardiacrecorder;
 
 public class User_Info {
-
-    String name,email,mobile,designation,link;
+    String name, email, mobile, designation, link;
 
     public String getName() {
         return name;
@@ -15,7 +14,6 @@ public class User_Info {
     public String getMobile() {
         return mobile;
     }
-
 
     public String getDesignation() {
         return designation;
@@ -36,7 +34,6 @@ public class User_Info {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
-
 
     public String getLink() {
         return link;
