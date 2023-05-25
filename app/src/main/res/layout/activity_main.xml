@@ -84,7 +84,9 @@ tools:context=".MainActivity">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.906" />
+    app:layout_constraintVertical_bias="0.906"
+    android:focusable="true"
+    tools:ignore="UsingOnClickInXml" />
 
 <TextView
     android:id="@+id/textView13"
