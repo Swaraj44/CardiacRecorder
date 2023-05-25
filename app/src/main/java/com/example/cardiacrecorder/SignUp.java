@@ -35,12 +35,11 @@ import java.util.HashMap;
 public class SignUp extends AppCompatActivity {
 
     private EditText mEmail, mPass;
-    private Button signUpBtn;
     private ImageView imageView;
     private ActivityResultLauncher<String> mGetContent;
     private Uri imageUri;
     private String link121 = " ", Ekey;
-    private EditText name11, email11, mobile11, designation11, dept11, id1;
+    private EditText name11, mobile11;
     private FirebaseAuth mAuth;
 
     ProgressDialog progressDialog;
@@ -50,17 +49,16 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        mEmail = findViewById(R.id.email_signin);
-        mPass = findViewById(R.id.passsignin);
-        signUpBtn = findViewById(R.id.singup_btn);
+        mEmail = findViewById(R.id.inputEmail);
+        mPass = findViewById(R.id.inputPassword);
+        Button signUpBtn = findViewById(R.id.buttonSignUp);
 
 
-        name11 = findViewById(R.id.name1);
-        email11 = findViewById(R.id.email_signin);
-        mobile11 = findViewById(R.id.mobi1);
+        name11 = findViewById(R.id.inputName);
+        mobile11 = findViewById(R.id.inputMobile);
 
 
-        imageView = findViewById(R.id.imageView9);
+        imageView = findViewById(R.id.imageProfile);
 
         mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
             @Override
@@ -93,10 +91,10 @@ public class SignUp extends AppCompatActivity {
     //Value adding function!
     public void add() {
 
-        String name, email, mobile, designation, dept, id, lk;
+        String name, email, mobile, lk;
         name = name11.getText().toString();
         mobile = mobile11.getText().toString();
-        email = email11.getText().toString();
+        email = mEmail.getText().toString();
         lk = link121;
         String ss = "\\.";
         String[] ss1 = email.split(ss, 100);
@@ -159,19 +157,19 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void IMG() {
-        /////////////////////////////////////////////////////////////
+
         progressDialog = new ProgressDialog(SignUp.this);
         progressDialog.setTitle("Uploading...");
         progressDialog.show();
 
 
         //String name=name11.getText().toString();
-        String email = email11.getText().toString();
+        String email = mEmail.getText().toString();
         String ss = "\\.";
         String[] ss1 = email.split(ss, 100);
-        String emailkey = "";
-        for (String a : ss1) emailkey += a;
-        Ekey = emailkey;
+        String emailKey = "";
+        for (String a : ss1) emailKey += a;
+        Ekey = emailKey;
 
         StorageReference SRef = FirebaseStorage.getInstance().getReference().child("Folder_CC").child(Ekey);
         SRef.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -181,12 +179,11 @@ public class SignUp extends AppCompatActivity {
                     SRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            //////////////////////////////////////////////////////////////////////////////////
-                            String url = String.valueOf(uri);
-                            link121 = url;
+
+                            link121 = String.valueOf(uri);
                             add();
                             // Toast.makeText(SignUp.this, link1, Toast.LENGTH_SHORT).show();
-                            //////////////////////////////////////////////////////////////////////////////////
+
                         }
                     });
                 }

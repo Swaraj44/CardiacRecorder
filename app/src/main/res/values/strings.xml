@@ -2,4 +2,11 @@
     <string name="app_name">CardiacRecorder</string>
     <string name="create_new_account">Create New Account</string>
     <string name="add_image">Add Image</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="password">password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="sign_up">sign Up</string>
+    <string name="sign_in">sign in</string>
+    <string name="phone_number">Phone number</string>
 </resources>
