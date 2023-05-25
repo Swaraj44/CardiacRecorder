@@ -20,22 +20,23 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
 
-    private EditText mEmail , mPass;
+    private EditText mEmail, mPass;
     private TextView mTextView;
     private Button signInBtn;
 
 
     String st;
     String ss;
-    String sname,sid;
-    int done=0;
-    int ck=0;
+    String sname, sid;
+    int done = 0;
+    int ck = 0;
     ProgressDialog progressDialog;
 
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,20 +57,21 @@ public class MainActivity extends AppCompatActivity{
                 progressDialog.setTitle("Signing in...");
                 progressDialog.show();
 
-                ss=mEmail.getText().toString();
+                ss = mEmail.getText().toString();
                 //search(ss);
                 loginUser();
             }
         });
 
     }
-    private void loginUser(){
+
+    private void loginUser() {
         String email = mEmail.getText().toString();
         String pass = mPass.getText().toString();
 
-        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if (!pass.isEmpty()){
-                mAuth.signInWithEmailAndPassword(email , pass)
+        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            if (!pass.isEmpty()) {
+                mAuth.signInWithEmailAndPassword(email, pass)
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
@@ -78,9 +80,9 @@ public class MainActivity extends AppCompatActivity{
 
                                 Toast.makeText(MainActivity.this, "Login Successfully !!", Toast.LENGTH_SHORT).show();
 
-                               Intent ii=new Intent(MainActivity.this , Dash_Board.class);
-                               ii.putExtra("email",email);
-                               startActivity(ii);
+                                Intent ii = new Intent(MainActivity.this, Dash_Board.class);
+                                ii.putExtra("email", email);
+                                startActivity(ii);
                                 finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -91,28 +93,22 @@ public class MainActivity extends AppCompatActivity{
                                 Toast.makeText(MainActivity.this, "Login Failed !!", Toast.LENGTH_SHORT).show();
                             }
                         });
-            }else{
+            } else {
                 progressDialog.dismiss();
                 mPass.setError("Empty Fields Are not Allowed");
             }
-        }else if(email.isEmpty()){
+        } else if (email.isEmpty()) {
             progressDialog.dismiss();
             mEmail.setError("Empty Fields Are not Allowed");
-        }else{
+        } else {
             progressDialog.dismiss();
             mEmail.setError("Please Enter Correct Email");
         }
     }
 
 
-
-
-
-
-
-    public void SIGNUP(View view)
-    {
-        Intent in=new Intent(MainActivity.this,SignUp.class);
+    public void SIGNUP(View view) {
+        Intent in = new Intent(MainActivity.this, SignUp.class);
         startActivity(in);
         // Do something in response to button click
     }

@@ -34,18 +34,12 @@ import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
 
-    private EditText mEmail , mPass;
-    private Button signUpBtn;
-
+    private EditText mEmail, mPass;
     private ImageView imageView;
-
     private ActivityResultLauncher<String> mGetContent;
     private Uri imageUri;
-
-    private String link121=" ",Ekey;
-
-    private EditText name11,email11,mobile11,designation11,dept11,id1;
-
+    private String link121 = " ", Ekey;
+    private EditText name11, mobile11;
     private FirebaseAuth mAuth;
 
     ProgressDialog progressDialog;
@@ -55,24 +49,21 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        mEmail = findViewById(R.id.email_signin);
-        mPass = findViewById(R.id.passsignin);
-        signUpBtn = findViewById(R.id.singup_btn);
+        mEmail = findViewById(R.id.inputEmail);
+        mPass = findViewById(R.id.inputPassword);
+        Button signUpBtn = findViewById(R.id.buttonSignUp);
 
 
-        name11=findViewById(R.id.name1);
-        email11=findViewById(R.id.email_signin);
-        mobile11=findViewById(R.id.mobi1);
+        name11 = findViewById(R.id.inputName);
+        mobile11 = findViewById(R.id.inputMobile);
 
 
-
-
-        imageView = findViewById(R.id.imageView9);
+        imageView = findViewById(R.id.imageProfile);
 
         mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
             @Override
             public void onActivityResult(Uri result) {
-                if(result != null){
+                if (result != null) {
                     imageView.setImageURI(result);
                     imageUri = result;
                 }
@@ -88,66 +79,40 @@ public class SignUp extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 IMG();
                 createUser();
             }
         });
-
     }
 
     //Value adding function!
+    public void add() {
 
-    public void add(){
-
-
-        String name,email,mobile,designation,dept,id,lk;
-
-        name=name11.getText().toString();
-
-        mobile=mobile11.getText().toString();
-        email=email11.getText().toString();
-        lk=link121;
-
-
-
-        String ss="\\.";
+        String name, email, mobile, lk;
+        name = name11.getText().toString();
+        mobile = mobile11.getText().toString();
+        email = mEmail.getText().toString();
+        lk = link121;
+        String ss = "\\.";
         String[] ss1 = email.split(ss, 100);
-        String emailkey="";
-        for (String a : ss1)emailkey+=a;
-        Ekey=emailkey;
-
-
-
-
-
+        String emailkey = "";
+        for (String a : ss1) emailkey += a;
+        Ekey = emailkey;
 
         /////////////////////////////////////////////////////////////////////
         HashMap<String, String> userMap = new HashMap<>();
-
         userMap.put("name", name);
         userMap.put("email", email);
         userMap.put("mobile", mobile);
         userMap.put("link", lk);
 
-
-
-
-
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference root = db.getReference().child("CardiacRecorder").child("USERS").child(emailkey);
 
-
-
-
-
-
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 progressDialog.dismiss();
@@ -156,24 +121,19 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-
-
-
-
-
-    private void createUser(){
+    private void createUser() {
         String email = mEmail.getText().toString();
         String pass = mPass.getText().toString();
 
-        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if (!pass.isEmpty()){
+        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            if (!pass.isEmpty()) {
                 mAuth.createUserWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
                                 Toast.makeText(SignUp.this, "Registered Successfully !!", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignUp.this ,MainActivity.class));
+                                startActivity(new Intent(SignUp.this, MainActivity.class));
                                 finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -183,28 +143,20 @@ public class SignUp extends AppCompatActivity {
                                 Toast.makeText(SignUp.this, "Registration Error !!", Toast.LENGTH_SHORT).show();
                             }
                         });
-            }else{
+            } else {
                 progressDialog.dismiss();
                 mPass.setError("Empty Fields Are not Allowed");
             }
-        }
-
-        else if(email.isEmpty()){
+        } else if (email.isEmpty()) {
             progressDialog.dismiss();
             mEmail.setError("Empty Fields Are not Allowed");
-        }else{
+        } else {
             progressDialog.dismiss();
             mEmail.setError("Pleas Enter Correct Email");
         }
     }
 
-
-
-    public void IMG(){
-
-
-
-        /////////////////////////////////////////////////////////////
+    public void IMG() {
 
         progressDialog = new ProgressDialog(SignUp.this);
         progressDialog.setTitle("Uploading...");
@@ -212,45 +164,30 @@ public class SignUp extends AppCompatActivity {
 
 
         //String name=name11.getText().toString();
-        String email=email11.getText().toString();
-
-
-
-        String ss="\\.";
+        String email = mEmail.getText().toString();
+        String ss = "\\.";
         String[] ss1 = email.split(ss, 100);
-        String emailkey="";
-        for (String a : ss1)emailkey+=a;
-        Ekey=emailkey;
+        String emailKey = "";
+        for (String a : ss1) emailKey += a;
+        Ekey = emailKey;
 
         StorageReference SRef = FirebaseStorage.getInstance().getReference().child("Folder_CC").child(Ekey);
-
         SRef.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     SRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-
-
                         @Override
                         public void onSuccess(Uri uri) {
-                            //////////////////////////////////////////////////////////////////////////////////
 
-                            String url = String.valueOf(uri);
-
-                            link121=url;
-
+                            link121 = String.valueOf(uri);
                             add();
-                           // Toast.makeText(SignUp.this, link1, Toast.LENGTH_SHORT).show();
-                            //////////////////////////////////////////////////////////////////////////////////
+                            // Toast.makeText(SignUp.this, link1, Toast.LENGTH_SHORT).show();
 
                         }
                     });
                 }
             }
         });
-
-
-
     }
-
 }

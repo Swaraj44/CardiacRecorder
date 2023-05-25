@@ -1,7 +1,7 @@
 package com.example.cardiacrecorder;
 
 public class DATA {
-    private  String date,time,systolic_pressure,diastolic_pressure,heart_rate,comment;
+    private String date, time, systolic_pressure, diastolic_pressure, heart_rate, comment;
 
     public String getDate() {
         return date;

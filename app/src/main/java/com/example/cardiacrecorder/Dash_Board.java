@@ -1,11 +1,11 @@
 package com.example.cardiacrecorder;
 
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,54 +32,37 @@ public class Dash_Board extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         b1 = findViewById(R.id.textView1112);
         b2 = findViewById(R.id.text1112);
-
         tt = findViewById(R.id.textView18);
-
-
         ////////////////////////////////////////////////
-
         imageView = findViewById(R.id.imageView232);
-
         ///////////////////////////////////////////////////////////////////////
 
 
         DatabaseReference rootST = db.getReference().child("CardiacRecorder").child("USERS");
-
-
         Bundle bb = getIntent().getExtras();
         String email_owner = bb.getString("email");
-
         rootST.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     User_Info model = dataSnapshot.getValue(User_Info.class);
-
                     String link = model.getLink();
                     String email = model.getEmail();
-                    String nm=model.getName();
-
+                    String nm = model.getName();
                     //tt.setText(nm);
-
                     if (Objects.equals(email, email_owner)) {
                         tt.setText(nm);
                         Picasso.get().load(link).into(imageView);
                         break;
                     }
-
-
                 }
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
-
         //////////////////////////////////////////////////
 
         /*

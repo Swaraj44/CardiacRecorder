@@ -15,8 +15,9 @@ tools:context=".MainActivity">
     android:ems="10"
     android:hint="Password:  Atleast 6 digits"
     android:inputType="textPassword"
-    android:textColor="@color/black"
-    android:textColorHint="@color/black"
+
+
+
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,8 @@ tools:context=".MainActivity">
     android:rotationX="10"
     android:rotationY="0"
     android:text="Student Login Panel:"
-    android:textColor="@color/purple_700"
+
+
     android:textSize="20dp"
     android:textStyle="bold"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -49,8 +51,6 @@ tools:context=".MainActivity">
     android:ems="10"
     android:hint="Email:"
     android:inputType="textPersonName"
-    android:textColor="@color/black"
-    android:textColorHint="@color/black"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.494"
@@ -87,7 +87,9 @@ tools:context=".MainActivity">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.906" />
+    app:layout_constraintVertical_bias="0.906"
+    android:focusable="true"
+    tools:ignore="UsingOnClickInXml" />
 
 <TextView
     android:id="@+id/textView13"
@@ -115,5 +117,11 @@ tools:context=".MainActivity">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
 
 
