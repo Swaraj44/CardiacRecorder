@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,19 +23,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private EditText mEmail, mPass;
-    private TextView mTextView;
-    private Button signInBtn;
-
-
-    String st;
+    public Button signInBtn;
     String ss;
-    String sname, sid;
-    int done = 0;
-    int ck = 0;
     ProgressDialog progressDialog;
-
+    ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
     @Override
@@ -42,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mEmail = findViewById(R.id.email_signin);
-        mPass = findViewById(R.id.passsignin);
-
-        signInBtn = findViewById(R.id.singin_btn);
-
+        mEmail = findViewById(R.id.inputEmail);
+        mPass = findViewById(R.id.inputPassword);
+        signInBtn = findViewById(R.id.buttonSignIn);
+        TextView createNewAccount = findViewById(R.id.createNewAccount);
+        progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -56,30 +49,34 @@ public class MainActivity extends AppCompatActivity {
                 progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.setTitle("Signing in...");
                 progressDialog.show();
-
                 ss = mEmail.getText().toString();
                 //search(ss);
                 loginUser();
             }
         });
 
+        createNewAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SignUp.class));
+            }
+        });
+
     }
+
 
     private void loginUser() {
         String email = mEmail.getText().toString();
         String pass = mPass.getText().toString();
-
+        loading(true);
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (!pass.isEmpty()) {
                 mAuth.signInWithEmailAndPassword(email, pass)
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-
                                 progressDialog.dismiss();
-
                                 Toast.makeText(MainActivity.this, "Login Successfully !!", Toast.LENGTH_SHORT).show();
-
                                 Intent ii = new Intent(MainActivity.this, Dash_Board.class);
                                 ii.putExtra("email", email);
                                 startActivity(ii);
@@ -88,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-
+                                loading(false);
                                 progressDialog.dismiss();
                                 Toast.makeText(MainActivity.this, "Login Failed !!", Toast.LENGTH_SHORT).show();
                             }
@@ -106,11 +103,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void loading(Boolean isLoading) {
+        if (isLoading) {
+            signInBtn.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
 
-    public void SIGNUP(View view) {
-        Intent in = new Intent(MainActivity.this, SignUp.class);
-        startActivity(in);
-        // Do something in response to button click
+        } else {
+            signInBtn.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
+
+        }
     }
 
 }

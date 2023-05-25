@@ -9,4 +9,6 @@
     <string name="sign_up">sign Up</string>
     <string name="sign_in">sign in</string>
     <string name="phone_number">Phone number</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_continue">Login to continue</string>
 </resources>
