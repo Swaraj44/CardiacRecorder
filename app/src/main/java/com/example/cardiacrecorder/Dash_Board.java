@@ -2,7 +2,6 @@ package com.example.cardiacrecorder;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,22 +19,20 @@ import java.util.Objects;
 
 public class Dash_Board extends AppCompatActivity {
 
-    private Button b1, b2;
     ImageView imageView;
     TextView tt;
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
-        b1 = findViewById(R.id.textView1112);
-        b2 = findViewById(R.id.text1112);
-        tt = findViewById(R.id.textView18);
-        ////////////////////////////////////////////////
-        imageView = findViewById(R.id.imageView232);
-        ///////////////////////////////////////////////////////////////////////
+
+
+        tt = findViewById(R.id.textName);
+        imageView = findViewById(R.id.imageProfile);
+
 
 
         DatabaseReference rootST = db.getReference().child("CardiacRecorder").child("USERS");
@@ -47,6 +44,7 @@ public class Dash_Board extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     User_Info model = dataSnapshot.getValue(User_Info.class);
+                    assert model != null;
                     String link = model.getLink();
                     String email = model.getEmail();
                     String nm = model.getName();
