@@ -63,26 +63,7 @@ public class Dash_Board extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-        //////////////////////////////////////////////////
 
-        /*
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in=new Intent(Teachers_Pannel_Main.this,Put_Result.class);
-                startActivity(in);
-            }
-        });
-
-    public void BK(View view)
-    {
-        Intent in=new Intent(Teachers_Pannel_Main.this,MainActivity2.class);
-        startActivity(in);
-        finish();
-        // Do something in response to button click
-    }
-
-*/
 
     }
 }
