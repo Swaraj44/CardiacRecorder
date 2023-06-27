@@ -13,6 +13,12 @@
         android:theme="@style/Theme.CardiacRecorder"
         tools:targetApi="31">
         <activity
+            android:name=".Add_Info"
+            android:exported="false" />
+        <activity
+            android:name=".View_Info"
+            android:exported="false" />
+        <activity
             android:name=".Dash_Board"
             android:exported="false" />
         <activity
