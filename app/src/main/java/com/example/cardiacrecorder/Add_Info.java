@@ -23,7 +23,7 @@ public class Add_Info extends AppCompatActivity {
     private EditText mEmail, mPass;
     private Button saveBtn;
 
-    private EditText name11, email11, mobile11, dept11;
+    private EditText edate, etime ,esystolic, ediastolic, eheart, ecomment;
 
     private FirebaseAuth mAuth;
 
@@ -34,10 +34,12 @@ public class Add_Info extends AppCompatActivity {
 
 
         saveBtn = findViewById(R.id.save_btn);
-        name11 = findViewById(R.id.name21);
-        email11 = findViewById(R.id.email_signin21);
-        mobile11 = findViewById(R.id.mobi21);
-        dept11 = findViewById(R.id.dept21);
+        edate =findViewById(R.id.dt);
+        etime=findViewById(R.id.tm);
+        esystolic=findViewById(R.id.sp);
+        ediastolic=findViewById(R.id.dp);
+        eheart=findViewById(R.id.hr);
+        ecomment=findViewById(R.id.cm);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -58,15 +60,28 @@ public class Add_Info extends AppCompatActivity {
 
 
         Bundle bb=getIntent().getExtras();
-        String dg=bb.getString("desg");
+        String email=bb.getString("xemail");
 
-        String name, email, mobile, designation, dept;
+        String date, time ,systolic, diastolic, heart, comment;
 
-        name = name11.getText().toString();
-        email = email11.getText().toString();
-        mobile = mobile11.getText().toString();
-        designation = dg;
-        dept = dept11.getText().toString();
+        ///////////////////////////////////////////////////////
+
+
+        date=edate.getText().toString();
+        time=etime.getText().toString();
+        systolic=esystolic.getText().toString();
+        diastolic=ediastolic.getText().toString();
+        heart=eheart.getText().toString();
+        comment=ecomment.getText().toString();
+
+
+
+
+
+
+        /////////////////////////////////////////////////////
+
+
 
 
         String ss="\\.";
@@ -80,17 +95,20 @@ public class Add_Info extends AppCompatActivity {
         /////////////////////////////////////////////////////////////////////
         HashMap<String, String> userMap = new HashMap<>();
 
-        userMap.put("name", name);
-        userMap.put("email", email);
-        userMap.put("mobile", mobile);
-        userMap.put("designation", designation);
-        userMap.put("dept", dept);
+        //date, time ,systolic, diastolic, heart, comment
+
+        userMap.put("date", date);
+        userMap.put("time", time);
+        userMap.put("systolic", systolic);
+        userMap.put("diastolic", diastolic);
+        userMap.put("heart", heart);
+        userMap.put("comment", comment);
 
 
 
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference root = db.getReference().child("EIMS").child(designation).child(emailkey);
+        DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey);
 
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
 

@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Login Successfully !!", Toast.LENGTH_SHORT).show();
                                 Intent ii = new Intent(MainActivity.this, Dash_Board.class);
                                 ii.putExtra("email", email);
+                                //Toast.makeText(MainActivity.this, "Tested  1 !!", Toast.LENGTH_SHORT).show();
+
                                 startActivity(ii);
                                 finish();
                             }

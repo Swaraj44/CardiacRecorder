@@ -29,7 +29,7 @@
         app:layout_constraintVertical_bias="0.081" />
 
     <EditText
-        android:id="@+id/mobi21"
+        android:id="@+id/tm"
         android:layout_width="314dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.388" />
 
     <EditText
-        android:id="@+id/email_signin21"
+        android:id="@+id/dp"
         android:layout_width="314dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.579" />
 
     <EditText
-        android:id="@+id/name21"
+        android:id="@+id/dt"
         android:layout_width="314dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <EditText
-        android:id="@+id/dept21"
+        android:id="@+id/sp"
         android:layout_width="314dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -95,7 +95,7 @@
 
 
     <EditText
-        android:id="@+id/aaa"
+        android:id="@+id/hr"
         android:layout_width="314dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.657" />
 
     <EditText
-        android:id="@+id/kkk"
+        android:id="@+id/cm"
         android:layout_width="326dp"
         android:layout_height="92dp"
         android:ems="10"
