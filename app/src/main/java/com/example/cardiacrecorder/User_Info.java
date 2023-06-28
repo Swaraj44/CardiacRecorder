@@ -3,6 +3,9 @@ package com.example.cardiacrecorder;
 public class User_Info {
     String name, email, mobile, designation, link;
 
+    public User_Info() {
+    }
+
     public String getName() {
         return name;
     }

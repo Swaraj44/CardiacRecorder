@@ -8,7 +8,7 @@
     <string name="name">Name</string>
     <string name="sign_up">sign Up</string>
     <string name="sign_in">sign in</string>
-    <string name="phone_number">Phone number</string>
+    <string name="phone_number">Phone</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="login_to_continue">Login to continue</string>
     <string name="add_new_record">Add New Record</string>
@@ -20,4 +20,9 @@
     <string name="heart_rate">Heart Rate</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="time_">Time:</string>
+    <string name="date_">Date:</string>
+    <string name="systolic">Systolic</string>
+    <string name="diastolic">Diastolic</string>
+    <string name="heart_rate_r">Heart Rate</string>
 </resources>

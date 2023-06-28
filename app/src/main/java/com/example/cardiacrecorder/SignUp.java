@@ -91,10 +91,11 @@ public class SignUp extends AppCompatActivity {
     //Value adding function!
     public void add() {
 
-        String name, email, mobile, lk;
+        String name, email, mobile, lk,password;
         name = name11.getText().toString();
         mobile = mobile11.getText().toString();
         email = mEmail.getText().toString();
+        password = mPass.getText().toString();
         lk = link121;
         String ss = "\\.";
         String[] ss1 = email.split(ss, 100);
@@ -108,6 +109,7 @@ public class SignUp extends AppCompatActivity {
         userMap.put("email", email);
         userMap.put("mobile", mobile);
         userMap.put("link", lk);
+        userMap.put("pass",password);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference root = db.getReference().child("CardiacRecorder").child("USERS").child(emailkey);
