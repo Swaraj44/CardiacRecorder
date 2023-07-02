@@ -1,10 +1,21 @@
 package com.example.cardiacrecorder;
 
-public class DATA {
+import java.io.Serializable;
+
+public class DATA implements Serializable {
     private String date, time, systolic_pressure, diastolic_pressure, heart_rate, comment;
 
     public String getDate() {
         return date;
+    }
+
+    public DATA(String date, String time, String systolic_pressure, String diastolic_pressure, String heart_rate) {
+        this.date = date;
+        this.time = time;
+        this.systolic_pressure = systolic_pressure;
+        this.diastolic_pressure = diastolic_pressure;
+        this.heart_rate = heart_rate;
+        this.comment = comment;
     }
 
     public void setDate(String date) {

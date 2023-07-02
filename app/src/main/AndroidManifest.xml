@@ -19,6 +19,9 @@
             android:name=".View_Info"
             android:exported="false" />
         <activity
+            android:name=".RecordActivity"
+            android:exported="false" />
+        <activity
             android:name=".Dash_Board"
             android:exported="false" />
         <activity
