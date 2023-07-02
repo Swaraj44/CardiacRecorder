@@ -22,27 +22,40 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 public class Dash_Board extends AppCompatActivity {
 
+
+    //////////////////////////
+
     private RecyclerView recyclerView;
-    private MyAdapter adapter;
-    private List<DATA> dataList;
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    //private DatabaseReference rootST= db.getReference().child("EIMS").child("Result").child("Student");
+
+    DatabaseReference rootSS;
+    //private MyAdapter adapter;
+    private MyAdapter2 adapter2;
+   // private ArrayList<DATA> list;
+    //private ArrayList<DATA> list2;
+
+
+    ////////////////////////////
+
+    //private RecyclerView recyclerView;
+   // private MyAdapter adapter;
+   // private List<DATA> dataList;
 
     ImageView imageView, signOut;
     Button newEntry;
     TextView tt;
+    //TextView tt42;
     FloatingActionButton xadd;
     String email_owner;
 
     //String xemail;
-    private final FirebaseDatabase db = FirebaseDatabase.getInstance();
+    //private final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,7 +64,9 @@ public class Dash_Board extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
 
 
+
         tt = findViewById(R.id.textName);
+       // tt42 = findViewById(R.id.t42);
         imageView = findViewById(R.id.imageProfile);
         xadd=findViewById(R.id.fabNewEntry);
 
@@ -86,23 +101,49 @@ public class Dash_Board extends AppCompatActivity {
             }
         });
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+       // SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        //SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
 
-        String currentDate = dateFormat.format(new Date());
-        String currentTime = timeFormat.format(new Date());
+        //String currentDate = dateFormat.format(new Date());
+        //String currentTime = timeFormat.format(new Date());
 
-        dataList = new ArrayList<>();
-        dataList.add(new DATA(currentDate, currentTime, "120", "80", "70"));
+        //dataList = new ArrayList<>();
+       // dataList.add(new DATA(currentDate, currentTime, "120", "80", "70"));
         // Add more items to the list as needed
 
+
+
+
         // Initialize RecyclerView and adapter
+        //recyclerView = findViewById(R.id.recordRecyclerView);
+       // recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //adapter = new MyAdapter(dataList);
+       // recyclerView.setAdapter(adapter);
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////////////////////////////////////
+
+
         recyclerView = findViewById(R.id.recordRecyclerView);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyAdapter(dataList);
-        recyclerView.setAdapter(adapter);
+
+        SHOW();
 
         setListener();
+
+
+        /////////////////////////////////////////////////
     }
 
     private void showToast(String message) {
@@ -139,4 +180,61 @@ public class Dash_Board extends AppCompatActivity {
 
         //newEntry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), RecordActivity.class)));
     }
+
+
+
+    void SHOW(){
+
+
+
+        //list = new ArrayList<DATA>();
+
+       ArrayList<DATA> list2 = new ArrayList<DATA>();
+        //adapter = new MyAdapter(this ,list );
+
+       //adapter2 = new MyAdapter2(list2);
+
+
+        adapter2 = new MyAdapter2(this ,list2 );
+       recyclerView.setAdapter(adapter2);
+
+
+
+
+        rootSS = db.getReference().child("CardiacRecorder").child("UsersHistory");
+
+
+
+        rootSS.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    DATA model = dataSnapshot.getValue(DATA.class);
+
+
+                    Toast.makeText(Dash_Board.this, "Checked!!", Toast.LENGTH_SHORT).show();
+
+                    list2.add(model);
+
+                    //String nm11 = model.getComment();
+
+                   // tt42.setText(nm11);
+
+
+
+                }
+               adapter2.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+
 }
