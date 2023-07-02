@@ -3,8 +3,8 @@ package com.example.cardiacrecorder;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,13 +22,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Dash_Board extends AppCompatActivity {
 
@@ -42,7 +41,7 @@ public class Dash_Board extends AppCompatActivity {
     FloatingActionButton xadd;
     String email_owner;
 
-    String xemail;
+    //String xemail;
     private final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
     @SuppressLint("MissingInflatedId")
@@ -56,7 +55,7 @@ public class Dash_Board extends AppCompatActivity {
         imageView = findViewById(R.id.imageProfile);
         xadd=findViewById(R.id.fabNewEntry);
 
-        newEntry = findViewById(R.id.fabNewEntry);
+        //newEntry = findViewById(R.id.fabNewEntry);
         signOut = findViewById(R.id.imageSignOut);
 
 
@@ -117,9 +116,10 @@ public class Dash_Board extends AppCompatActivity {
     }
 
     private void setListener() {
-        signOut.setOnClickListener(v -> signOut());
+       signOut.setOnClickListener(v -> signOut());
 
-        xadd.setOnClickListener(new View.OnClickListener() {
+
+       xadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -135,6 +135,8 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
-        newEntry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), RecordActivity.class)));
+
+
+        //newEntry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), RecordActivity.class)));
     }
 }
