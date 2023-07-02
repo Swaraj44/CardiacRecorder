@@ -15,7 +15,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 
 public class Add_Info extends AppCompatActivity {
@@ -34,8 +37,8 @@ public class Add_Info extends AppCompatActivity {
 
 
         saveBtn = findViewById(R.id.save_btn);
-        edate =findViewById(R.id.dt);
-        etime=findViewById(R.id.tm);
+        //edate =findViewById(R.id.dt);
+        //etime=findViewById(R.id.tm);
         esystolic=findViewById(R.id.sp);
         ediastolic=findViewById(R.id.dp);
         eheart=findViewById(R.id.hr);
@@ -66,9 +69,15 @@ public class Add_Info extends AppCompatActivity {
 
         ///////////////////////////////////////////////////////
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
 
-        date=edate.getText().toString();
-        time=etime.getText().toString();
+        date = dateFormat.format(new Date());
+        time = timeFormat.format(new Date());
+
+
+        //date=edate.getText().toString();
+        //time=etime.getText().toString();
         systolic=esystolic.getText().toString();
         diastolic=ediastolic.getText().toString();
         heart=eheart.getText().toString();

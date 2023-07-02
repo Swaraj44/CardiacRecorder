@@ -5,9 +5,7 @@ import java.io.Serializable;
 public class DATA implements Serializable {
     private String date, time, systolic_pressure, diastolic_pressure, heart_rate, comment;
 
-    public String getDate() {
-        return date;
-    }
+
 
     public DATA(String date, String time, String systolic_pressure, String diastolic_pressure, String heart_rate) {
         this.date = date;
@@ -18,6 +16,10 @@ public class DATA implements Serializable {
         this.comment = comment;
     }
 
+
+    public String getDate() {
+        return date;
+    }
     public void setDate(String date) {
         this.date = date;
     }
