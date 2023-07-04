@@ -24,7 +24,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_container_record , parent ,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item , parent ,false);
         return new MyViewHolder(v);
 
     }
@@ -64,11 +64,11 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textDate = itemView.findViewById(R.id.textDate);
-            textTime = itemView.findViewById(R.id.textTime);
-            textSystolic = itemView.findViewById(R.id.textSystolic);
-            textDiastolic = itemView.findViewById(R.id.textDiastolic);
-            textHeartRate = itemView.findViewById(R.id.textHeartRate);
+            textDate = itemView.findViewById(R.id.date);
+            textTime = itemView.findViewById(R.id.time);
+            textSystolic = itemView.findViewById(R.id.systolic);
+            textDiastolic = itemView.findViewById(R.id.diastolic);
+            textHeartRate = itemView.findViewById(R.id.heart);
 
         }
     }
