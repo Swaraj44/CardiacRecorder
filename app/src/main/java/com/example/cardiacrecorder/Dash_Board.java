@@ -114,11 +114,7 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
-        // Initialize RecyclerView and adapter
-        //recyclerView = findViewById(R.id.recordRecyclerView);
-       // recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //adapter = new MyAdapter(dataList);
-       // recyclerView.setAdapter(adapter);
+
 
 
 
@@ -187,12 +183,10 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
-        //list = new ArrayList<DATA>();
+
 
        ArrayList<DATA> list2 = new ArrayList<DATA>();
-        //adapter = new MyAdapter(this ,list );
 
-       //adapter2 = new MyAdapter2(list2);
 
 
         adapter2 = new MyAdapter2(this ,list2 );
@@ -201,7 +195,16 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
-        rootSS = db.getReference().child("CardiacRecorder").child("UsersHistory");
+        String ss="\\.";
+        String[] ss1 = email_owner.split(ss, 100);
+        String emailkey="";
+
+        for (String a : ss1)emailkey+=a;
+
+
+
+
+        rootSS = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey);
 
 
 

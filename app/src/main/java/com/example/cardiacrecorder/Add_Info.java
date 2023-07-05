@@ -117,7 +117,7 @@ public class Add_Info extends AppCompatActivity {
 
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey);
+        DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey).push();
 
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
 
@@ -126,5 +126,8 @@ public class Add_Info extends AppCompatActivity {
                 Toast.makeText(Add_Info.this, "Data Saved", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
 }
