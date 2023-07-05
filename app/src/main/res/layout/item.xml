@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
-android:layout_height="180dp"
+android:layout_height="wrap_content"
 android:background="#3BFFFFFF"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 app:cardElevation="8dp"
@@ -23,7 +23,7 @@ android:layout_margin="10dp">
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Date     :"
+                android:text="Date:"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
@@ -53,7 +53,7 @@ android:layout_margin="10dp">
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Time     Code    :"
+                android:text="Time:"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
@@ -83,7 +83,7 @@ android:layout_margin="10dp">
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="systolic    :"
+                android:text="systolic:"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
@@ -112,7 +112,7 @@ android:layout_margin="10dp">
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="diastolic    :"
+                android:text="diastolic"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
@@ -141,7 +141,7 @@ android:layout_margin="10dp">
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="heart    :"
+                android:text="heart:"
                 android:textSize="20sp"
                 android:textStyle="bold">
 
