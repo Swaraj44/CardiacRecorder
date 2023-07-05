@@ -297,7 +297,7 @@ public class Add_Info extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey).push();
-
+        String recordKey = root.getKey();
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
 
             @Override
