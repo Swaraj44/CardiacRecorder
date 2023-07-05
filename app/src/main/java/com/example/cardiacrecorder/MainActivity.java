@@ -93,13 +93,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
             } else {
+                loading(false);
                 progressDialog.dismiss();
                 mPass.setError("Empty Fields Are not Allowed");
             }
         } else if (email.isEmpty()) {
+            loading(false);
             progressDialog.dismiss();
             mEmail.setError("Empty Fields Are not Allowed");
         } else {
+            loading(false);
             progressDialog.dismiss();
             mEmail.setError("Please Enter Correct Email");
         }
