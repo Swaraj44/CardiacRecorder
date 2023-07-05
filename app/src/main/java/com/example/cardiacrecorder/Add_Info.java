@@ -42,7 +42,7 @@ public class Add_Info extends AppCompatActivity {
         esystolic=findViewById(R.id.sp);
         ediastolic=findViewById(R.id.dp);
         eheart=findViewById(R.id.hr);
-        ecomment=findViewById(R.id.cm);
+       // ecomment=findViewById(R.id.cm);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -81,8 +81,29 @@ public class Add_Info extends AppCompatActivity {
         systolic=esystolic.getText().toString();
         diastolic=ediastolic.getText().toString();
         heart=eheart.getText().toString();
-        comment=ecomment.getText().toString();
+        //comment=ecomment.getText().toString();
 
+
+
+
+        int systolicPressure = Integer.parseInt(systolic);
+        int diastolicPressure = Integer.parseInt(diastolic);
+        int heartRate = Integer.parseInt(heart);
+
+
+        //////////////////////////////////////////////////////
+
+        comment = "";
+
+        if (systolicPressure >= 140 || diastolicPressure >= 90) {
+            comment = "High blood pressure!";
+        } else if (systolicPressure <= 90 || diastolicPressure <= 60) {
+            comment = "Low blood pressure!";
+        } else if (heartRate < 60 || heartRate > 100) {
+            comment = "Irregular heart rate!";
+        } else {
+            comment = "Normal";
+        }
 
 
 
