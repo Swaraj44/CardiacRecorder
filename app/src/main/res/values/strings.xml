@@ -11,9 +11,9 @@
     <string name="phone_number">Phone</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="login_to_continue">Login to continue</string>
-    <string name="add_new_record">Add New Record</string>
-    <string name="add_record">Add Record</string>
-    <string name="cancel">cancel</string>
+    <string name="record">User Records</string>
+    <string name="update_record">Update</string>
+    <string name="delete">Delete</string>
     <string name="comment">Comment</string>
     <string name="diastolic_pressure">Diastolic Pressure</string>
     <string name="systolic_pressure">Systolic Pressure</string>
@@ -25,4 +25,5 @@
     <string name="systolic">Systolic</string>
     <string name="diastolic">Diastolic</string>
     <string name="heart_rate_r">Heart Rate</string>
+    <string name="save">Save</string>
 </resources>
