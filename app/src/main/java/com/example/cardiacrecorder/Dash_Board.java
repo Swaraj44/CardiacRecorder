@@ -186,6 +186,7 @@ public class Dash_Board extends AppCompatActivity {
     void SHOW(){
 
 
+        progressBar.setVisibility(View.VISIBLE);
 
 
 
@@ -232,6 +233,7 @@ public class Dash_Board extends AppCompatActivity {
 
                 }
                adapter2.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
