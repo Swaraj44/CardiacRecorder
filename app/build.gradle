@@ -6,7 +6,9 @@ plugins {
 android {
     namespace 'com.example.cardiacrecorder'
 
-
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 
     compileSdk 33
 
@@ -56,4 +58,17 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+
+    // JUnit
+    testImplementation 'junit:junit:4.13.2'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+
+
+
+
+
 }

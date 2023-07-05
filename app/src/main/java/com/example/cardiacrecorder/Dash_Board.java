@@ -42,12 +42,6 @@ public class Dash_Board extends AppCompatActivity {
     //private ArrayList<DATA> list2;
 
 
-    ////////////////////////////
-
-    //private RecyclerView recyclerView;
-   // private MyAdapter adapter;
-   // private List<DATA> dataList;
-
     ImageView imageView, signOut;
     Button newEntry;
     TextView tt;
@@ -70,11 +64,8 @@ public class Dash_Board extends AppCompatActivity {
 
 
         tt = findViewById(R.id.textName);
-       // tt42 = findViewById(R.id.t42);
         imageView = findViewById(R.id.imageProfile);
         xadd=findViewById(R.id.fabNewEntry);
-
-        //newEntry = findViewById(R.id.fabNewEntry);
         signOut = findViewById(R.id.imageSignOut);
 
 
@@ -104,31 +95,6 @@ public class Dash_Board extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
-       // SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        //SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-
-        //String currentDate = dateFormat.format(new Date());
-        //String currentTime = timeFormat.format(new Date());
-
-        //dataList = new ArrayList<>();
-       // dataList.add(new DATA(currentDate, currentTime, "120", "80", "70"));
-        // Add more items to the list as needed
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         //////////////////////////////////////////////////
@@ -171,10 +137,6 @@ public class Dash_Board extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
 
 
@@ -224,11 +186,6 @@ public class Dash_Board extends AppCompatActivity {
                     Toast.makeText(Dash_Board.this, "Checked!!", Toast.LENGTH_SHORT).show();
 
                     list2.add(model);
-
-                    //String nm11 = model.getComment();
-
-                   // tt42.setText(nm11);
-
 
 
                 }
