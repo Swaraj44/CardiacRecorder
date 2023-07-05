@@ -27,6 +27,7 @@ import java.util.Map;
 public class RecordActivity extends AppCompatActivity {
 
     TextView esystolic, ediastolic, eheart;
+    DATA data = (DATA) getIntent().getSerializableExtra("data_key");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class RecordActivity extends AppCompatActivity {
 
 
 
-        DATA data = (DATA) getIntent().getSerializableExtra("data_key");
+
         esystolic.setText(data.getSystolic_pressure());
         ediastolic.setText(data.getDiastolic_pressure());
         eheart.setText(data.getHeart_rate());
@@ -103,8 +104,7 @@ public class RecordActivity extends AppCompatActivity {
                 .getReference()
                 .child("CardiacRecorder")
                 .child("UsersHistory")
-                .child(emailkey)
-                .child(data);
+                .child(emailkey);
 
 
         HashMap<String, Object> userMap = new HashMap<>();
