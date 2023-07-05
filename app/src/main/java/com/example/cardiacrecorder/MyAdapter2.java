@@ -1,6 +1,7 @@
 package com.example.cardiacrecorder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +15,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
     ArrayList<DATA> mList;
     Context context;
+    private RecyclerViewClickListener itemClickListener;
 
-    public MyAdapter2(Context context, ArrayList<DATA> mList){
+    public MyAdapter2(Context context, ArrayList<DATA> mList,RecyclerViewClickListener itemClickListener){
 
         this.mList = mList;
         this.context = context;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -42,6 +45,14 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         holder.textHeartRate.setText(item.getHeart_rate());
         holder.textcomment.setText(item.getComment());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemClickListener != null) {
+                    itemClickListener.onItemClick(item);
+                }
+            }
+        });
 
 
 

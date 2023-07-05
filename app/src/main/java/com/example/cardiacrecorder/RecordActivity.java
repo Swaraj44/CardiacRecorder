@@ -39,6 +39,13 @@ public class RecordActivity extends AppCompatActivity {
         ediastolic = findViewById(R.id.inputDiastolic);
         eheart = findViewById(R.id.inputHeartRate);
 
+
+
+        DATA data = (DATA) getIntent().getSerializableExtra("data_key");
+        esystolic.setText(data.getSystolic_pressure());
+        ediastolic.setText(data.getDiastolic_pressure());
+        eheart.setText(data.getHeart_rate());
+
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +58,7 @@ public class RecordActivity extends AppCompatActivity {
     private void update() {
 
         Bundle bb = getIntent().getExtras();
-        String email = bb.getString("xemail");
+        String email = bb.getString("email");
 
         String date, time, systolic, diastolic, heart, comment;
 
@@ -89,7 +96,18 @@ public class RecordActivity extends AppCompatActivity {
 
         for (String a : ss1) emailkey += a;
 
-        HashMap<String, String> userMap = new HashMap<>();
+
+
+
+        DatabaseReference usersHistoryRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("CardiacRecorder")
+                .child("UsersHistory")
+                .child(emailkey)
+                .child(data);
+
+
+        HashMap<String, Object> userMap = new HashMap<>();
 
 
         userMap.put("date", date);
@@ -99,20 +117,7 @@ public class RecordActivity extends AppCompatActivity {
         userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
 
-
-        DatabaseReference usersHistoryRef = FirebaseDatabase.getInstance()
-                .getReference()
-                .child("CardiacRecorder")
-                .child("UsersHistory")
-                .child(email)
-                .child(emailkey);
-
-        Map<String, Object> updates = new HashMap<>();
-        updates.put("systolic_pressure", esystolic);
-        updates.put("diastolic_pressure", ediastolic);
-        updates.put("heart_rate", eheart);
-
-        usersHistoryRef.updateChildren(updates)
+        usersHistoryRef.updateChildren(userMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

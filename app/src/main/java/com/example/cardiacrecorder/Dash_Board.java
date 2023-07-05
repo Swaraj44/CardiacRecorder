@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Dash_Board extends AppCompatActivity {
+public class Dash_Board extends AppCompatActivity implements RecyclerViewClickListener  {
 
 
     //////////////////////////
@@ -140,6 +140,7 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
+
         //newEntry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), RecordActivity.class)));
     }
 
@@ -158,7 +159,7 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
-        adapter2 = new MyAdapter2(this ,list2 );
+        adapter2 = new MyAdapter2(this ,list2,this );
        recyclerView.setAdapter(adapter2);
 
 
@@ -209,4 +210,11 @@ public class Dash_Board extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemClick(DATA data) {
+        Intent intent = new Intent(Dash_Board.this, RecordActivity.class);
+        intent.putExtra("data_key", data);
+        intent.putExtra("email",email_owner);
+        startActivity(intent);
+    }
 }
