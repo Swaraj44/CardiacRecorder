@@ -10,34 +10,34 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="279dp"
-        android:layout_height="59dp"
-        android:background="#9EEA68"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:rotationX="10"
         android:rotationY="0"
-        android:text="Add Information:"
-
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
+        android:text="Add Record"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
-
+        app:layout_constraintVertical_bias="0.195" />
 
     <EditText
         android:id="@+id/dp"
         android:layout_width="314dp"
-        android:layout_height="42dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/input_background"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColor="@color/primary_text"
+        android:imeOptions="actionNext"
         android:ems="10"
-        android:hint="Diastolic pressure :"
+        android:hint="@string/diastolic_pressure"
         android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
@@ -45,15 +45,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.386" />
 
+
     <EditText
         android:id="@+id/sp"
         android:layout_width="314dp"
-        android:layout_height="42dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/input_background"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColor="@color/primary_text"
+        android:imeOptions="actionNext"
         android:ems="10"
-        android:hint="Systolic pressure:"
+        android:hint="@string/systolic_pressure"
         android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
@@ -64,46 +70,60 @@
     <EditText
         android:id="@+id/hr"
         android:layout_width="314dp"
-        android:layout_height="42dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/input_background"
         android:ems="10"
-        android:hint="Heart rate :"
+        android:hint="@string/heart_rate"
+        android:imeOptions="actionNext"
         android:inputType="textPersonName"
-        android:textColor="@color/black"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColor="@color/primary_text"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <EditText
+        android:id="@+id/cm"
+        android:layout_width="314dp"
+        android:layout_height="92dp"
+        android:background="@color/input_background"
+        android:ems="10"
+        android:hint="comment :"
+
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColor="@color/primary_text"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintVertical_bias="0.658" />
 
-    <EditText
-        android:id="@+id/cm"
-        android:layout_width="326dp"
-        android:layout_height="92dp"
-        android:ems="10"
-        android:hint="comment :"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
 
     <Button
-    android:id="@+id/save_btn"
-    android:layout_width="217dp"
-    android:layout_height="48dp"
-    android:text="Save"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.564"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.909" />
+        android:id="@+id/save_btn"
+        android:layout_width="314dp"
+        android:layout_height="@dimen/_50sdp"
+        android:text="@string/save"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_8sdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
