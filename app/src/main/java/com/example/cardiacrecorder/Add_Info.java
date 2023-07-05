@@ -1,5 +1,6 @@
 package com.example.cardiacrecorder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ import java.util.Locale;
 public class Add_Info extends AppCompatActivity {
 
     private EditText mEmail, mPass;
-    private Button saveBtn;
+    private Button saveBtn,backBtn;
 
     private EditText edate, etime ,esystolic, ediastolic, eheart, ecomment;
 
@@ -35,7 +36,7 @@ public class Add_Info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_info);
 
-
+        backBtn = findViewById(R.id.back_btn);
         saveBtn = findViewById(R.id.save_btn);
         //edate =findViewById(R.id.dt);
         //etime=findViewById(R.id.tm);
@@ -55,7 +56,18 @@ public class Add_Info extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_Info.this,Dash_Board.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
 
     //Value adding function!
 
