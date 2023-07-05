@@ -36,6 +36,7 @@
         android:ems="10"
         android:hint="@string/diastolic_pressure"
         android:imeOptions="actionNext"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName"
         android:paddingStart="@dimen/_16sdp"
         android:paddingEnd="@dimen/_16sdp"
@@ -60,7 +61,7 @@
         android:paddingStart="@dimen/_16sdp"
         android:paddingEnd="@dimen/_16sdp"
         android:textColor="@color/primary_text"
-
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
@@ -76,6 +77,7 @@
         android:background="@color/input_background"
         android:ems="10"
         android:hint="@string/heart_rate"
+        android:textColorHint="@color/black"
         android:imeOptions="actionNext"
         android:inputType="textPersonName"
         android:paddingStart="@dimen/_16sdp"
@@ -88,25 +90,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.495" />
 
-    <EditText
-        android:id="@+id/cm"
-        android:layout_width="314dp"
-        android:layout_height="92dp"
-        android:background="@color/input_background"
-        android:ems="10"
-        android:hint="comment"
-        android:imeOptions="actionNext"
-        android:inputType="textMultiLine"
-        android:paddingStart="@dimen/_16sdp"
-        android:paddingEnd="@dimen/_16sdp"
-        android:textColor="@color/primary_text"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+<!--    <EditText-->
+<!--        android:id="@+id/cm"-->
+<!--        android:layout_width="314dp"-->
+<!--        android:layout_height="92dp"-->
+<!--        android:background="@color/input_background"-->
+<!--        android:ems="10"-->
+<!--        android:hint="comment"-->
+<!--        android:imeOptions="actionNext"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:paddingStart="@dimen/_16sdp"-->
+<!--        android:paddingEnd="@dimen/_16sdp"-->
+<!--        android:textColor="@color/primary_text"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.432"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.658" />-->
 
 
     <Button

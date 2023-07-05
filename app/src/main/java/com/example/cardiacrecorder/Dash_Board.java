@@ -145,6 +145,8 @@ public class Dash_Board extends AppCompatActivity {
 
 
 
+
+
     void SHOW(){
 
 
@@ -167,6 +169,10 @@ public class Dash_Board extends AppCompatActivity {
         String emailkey="";
 
         for (String a : ss1)emailkey+=a;
+
+
+
+
 
 
 
