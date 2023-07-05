@@ -104,7 +104,8 @@ public class RecordActivity extends AppCompatActivity {
                 .getReference()
                 .child("CardiacRecorder")
                 .child("UsersHistory")
-                .child(emailkey);
+                .child(emailkey)
+                .child(data.getKey());
 
 
         HashMap<String, Object> userMap = new HashMap<>();
@@ -127,7 +128,7 @@ public class RecordActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Toast.makeText(RecordActivity.this, "Data Update failed", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
