@@ -3,13 +3,14 @@ package com.example.cardiacrecorder;
 import java.io.Serializable;
 
 public class DATA implements Serializable {
-    private String date, time, systolic_pressure, diastolic_pressure, heart_rate, comment;
+    private String key, date, time, systolic_pressure, diastolic_pressure, heart_rate, comment;
 
     public DATA() {
 
     }
 
-    public DATA(String date, String time, String systolic_pressure, String diastolic_pressure, String heart_rate,String comment) {
+    public DATA(String key,String date, String time, String systolic_pressure, String diastolic_pressure, String heart_rate,String comment) {
+        this.key = key;
         this.date = date;
         this.time = time;
         this.systolic_pressure = systolic_pressure;
@@ -18,6 +19,13 @@ public class DATA implements Serializable {
         this.comment = comment;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getDate() {
         return date;

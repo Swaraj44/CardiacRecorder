@@ -138,6 +138,11 @@ public class Add_Info extends AppCompatActivity {
 
 
 
+        int x = Count(emailkey);
+        x++;
+        String kkey = Integer.toString(x);
+
+
         /////////////////////////////////////////////////////////////////////
         HashMap<String, String> userMap = new HashMap<>();
 
@@ -149,6 +154,7 @@ public class Add_Info extends AppCompatActivity {
         userMap.put("diastolic_pressure", diastolic);
         userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
+        userMap.put("key", kkey);
 
 
         /////////////////////////////////////////////////////////
