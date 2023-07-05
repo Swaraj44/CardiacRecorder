@@ -3,7 +3,7 @@
     <string name="create_new_account">Create New Account</string>
     <string name="add_image">Add Image</string>
     <string name="confirm_password">confirm password</string>
-    <string name="password">password</string>
+    <string name="password">password at least 8 character</string>
     <string name="email">Email</string>
     <string name="name">Name</string>
     <string name="sign_up">sign Up</string>
@@ -26,4 +26,5 @@
     <string name="diastolic">Diastolic</string>
     <string name="heart_rate_r">Heart Rate</string>
     <string name="save">Save</string>
+    <string name="pass">password</string>
 </resources>

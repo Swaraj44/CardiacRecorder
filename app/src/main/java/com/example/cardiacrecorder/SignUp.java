@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -52,7 +53,7 @@ public class SignUp extends AppCompatActivity {
         mEmail = findViewById(R.id.inputEmail);
         mPass = findViewById(R.id.inputPassword);
         Button signUpBtn = findViewById(R.id.buttonSignUp);
-
+        TextView signIn = findViewById(R.id.textSignIn);
 
         name11 = findViewById(R.id.inputName);
         mobile11 = findViewById(R.id.inputMobile);
@@ -70,6 +71,14 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
