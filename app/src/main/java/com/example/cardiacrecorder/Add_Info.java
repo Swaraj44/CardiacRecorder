@@ -108,9 +108,9 @@ public class Add_Info extends AppCompatActivity {
 
         userMap.put("date", date);
         userMap.put("time", time);
-        userMap.put("systolic", systolic);
-        userMap.put("diastolic", diastolic);
-        userMap.put("heart", heart);
+        userMap.put("systolic_pressure", systolic);
+        userMap.put("diastolic_pressure", diastolic);
+        userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,8 @@ public class Dash_Board extends AppCompatActivity {
     FloatingActionButton xadd;
     String email_owner;
 
+    ProgressBar progressBar;
+
     //String xemail;
     //private final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
@@ -63,6 +66,7 @@ public class Dash_Board extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+       progressBar = findViewById(R.id.progressBar);
 
 
         tt = findViewById(R.id.textName);
