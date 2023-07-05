@@ -42,7 +42,7 @@ public class Add_Info extends AppCompatActivity {
         esystolic=findViewById(R.id.sp);
         ediastolic=findViewById(R.id.dp);
         eheart=findViewById(R.id.hr);
-        ecomment=findViewById(R.id.cm);
+       // ecomment=findViewById(R.id.cm);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -81,8 +81,29 @@ public class Add_Info extends AppCompatActivity {
         systolic=esystolic.getText().toString();
         diastolic=ediastolic.getText().toString();
         heart=eheart.getText().toString();
-        comment=ecomment.getText().toString();
+        //comment=ecomment.getText().toString();
 
+
+
+
+        int systolicPressure = Integer.parseInt(systolic);
+        int diastolicPressure = Integer.parseInt(diastolic);
+        int heartRate = Integer.parseInt(heart);
+
+
+        //////////////////////////////////////////////////////
+
+        comment = "";
+
+        if (systolicPressure >= 140 || diastolicPressure >= 90) {
+            comment = "High blood pressure!";
+        } else if (systolicPressure <= 90 || diastolicPressure <= 60) {
+            comment = "Low blood pressure!";
+        } else if (heartRate < 60 || heartRate > 100) {
+            comment = "Irregular heart rate!";
+        } else {
+            comment = "Normal";
+        }
 
 
 
@@ -108,16 +129,16 @@ public class Add_Info extends AppCompatActivity {
 
         userMap.put("date", date);
         userMap.put("time", time);
-        userMap.put("systolic", systolic);
-        userMap.put("diastolic", diastolic);
-        userMap.put("heart", heart);
+        userMap.put("systolic_pressure", systolic);
+        userMap.put("diastolic_pressure", diastolic);
+        userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
 
 
 
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey);
+        DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey).push();
 
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
 
@@ -126,5 +147,8 @@ public class Add_Info extends AppCompatActivity {
                 Toast.makeText(Add_Info.this, "Data Saved", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
 }

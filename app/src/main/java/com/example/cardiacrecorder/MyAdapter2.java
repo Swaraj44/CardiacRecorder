@@ -40,6 +40,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         holder.textSystolic.setText(item.getSystolic_pressure());
         holder.textDiastolic.setText(item.getDiastolic_pressure());
         holder.textHeartRate.setText(item.getHeart_rate());
+        holder.textcomment.setText(item.getComment());
 
 
 
@@ -61,6 +62,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         TextView textDiastolic;
         TextView textHeartRate;
 
+        TextView textcomment;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -69,6 +72,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
             textSystolic = itemView.findViewById(R.id.systolic);
             textDiastolic = itemView.findViewById(R.id.diastolic);
             textHeartRate = itemView.findViewById(R.id.heart);
+            textcomment = itemView.findViewById(R.id.comment);
 
         }
     }
