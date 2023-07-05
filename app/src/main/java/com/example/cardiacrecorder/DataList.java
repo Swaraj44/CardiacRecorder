@@ -7,41 +7,50 @@ public class DataList {
 
     private List<DATA> data = new ArrayList<>();
 
-    // Add
-    public void add(DATA e) {
-        if (data.contains(e)) {
-            throw new IllegalArgumentException("Entry already exists");
-        }
-        data.add(e);
+
+
+    public void add(DATA dd) {
+        if (data.contains(dd)) {throw new IllegalArgumentException("Data exists already!");}
+        data.add(dd);
     }
 
-    // Delete
-    public void delete(DATA e) {
-        if (!data.contains(e)) {
-            throw new IllegalArgumentException("Entry does not exist");
-        }
-        data.remove(e);
+
+
+
+    public void delete(DATA dd) {
+        if (!data.contains(dd)) {throw new IllegalArgumentException("Data does not exist!");}
+        data.remove(dd);
     }
 
-    // Count
+
+
+
+
     public int count() {
         return data.size();
     }
 
-    // Update
-    public void update(DATA e) {
+
+
+
+
+
+
+    public void update(DATA dd) {
         for (int i = 0; i < data.size(); i++) {
             DATA cdata = data.get(i);
-            if (cdata.getKey().equals(e.getKey())) {
-                data.set(i, e);
+            if (cdata.getKey().equals(dd.getKey())) {
+                data.set(i,dd);
                 return;
             }
         }
-        throw new IllegalArgumentException("Entry not found");
+        throw new IllegalArgumentException("Data not found!");
     }
 
-    public List<DATA> getEntries() {
-        List<DATA> entryList = new ArrayList<>(data);
-        return entryList;
+
+
+
+    public List<DATA> getDatalist() {
+        List<DATA> getDatalist = new ArrayList<>(data); return getDatalist;
     }
 }
