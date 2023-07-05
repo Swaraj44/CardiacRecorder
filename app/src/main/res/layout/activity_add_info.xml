@@ -96,7 +96,7 @@
         android:ems="10"
         android:hint="comment"
         android:imeOptions="actionNext"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:paddingStart="@dimen/_16sdp"
         android:paddingEnd="@dimen/_16sdp"
         android:textColor="@color/primary_text"
