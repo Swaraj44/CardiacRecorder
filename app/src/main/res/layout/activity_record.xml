@@ -96,7 +96,7 @@
             android:animateLayoutChanges="true">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonAddRecord"
+                android:id="@+id/buttonUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
                 android:text="@string/update_record"
@@ -112,7 +112,7 @@
         </FrameLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonCancel"
+            android:id="@+id/buttonDelete"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:text="@string/delete"

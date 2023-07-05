@@ -163,6 +163,11 @@ android:layout_margin="10dp">
                 android:textColor="@color/teal_700"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 
