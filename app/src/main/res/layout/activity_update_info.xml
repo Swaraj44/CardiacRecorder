@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#DEE3FF"
+tools:context=".Update_Info"
+    >
+
+
+<TextView
+    android:id="@+id/textView5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:rotationX="10"
+    android:rotationY="0"
+    android:text="Update Record"
+    android:textColor="@color/primary"
+    android:textSize="@dimen/_18ssp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+
+    app:layout_constraintVertical_bias="0.195" />
+
+
+<EditText
+    android:id="@+id/dp1"
+    android:layout_width="314dp"
+    android:layout_height="@dimen/_45sdp"
+    android:layout_marginTop="@dimen/_20sdp"
+    android:background="@color/input_background"
+    android:ems="10"
+    android:hint="@string/diastolic_pressure"
+    android:imeOptions="actionNext"
+    android:textColorHint="@color/black"
+    android:inputType="textPersonName"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:textColor="@color/primary_text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.432"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.376" />
+
+<EditText
+    android:id="@+id/sp1"
+    android:layout_width="314dp"
+    android:layout_height="@dimen/_45sdp"
+    android:layout_marginTop="@dimen/_20sdp"
+    android:background="@color/input_background"
+    android:ems="10"
+    android:hint="@string/systolic_pressure"
+    android:imeOptions="actionNext"
+    android:inputType="textPersonName"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:textColor="@color/primary_text"
+    android:textColorHint="@color/black"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.432"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.263" />
+
+<EditText
+    android:id="@+id/hr1"
+    android:layout_width="314dp"
+    android:layout_height="@dimen/_45sdp"
+    android:layout_marginTop="@dimen/_20sdp"
+    android:background="@color/input_background"
+    android:ems="10"
+    android:hint="@string/heart_rate"
+    android:textColorHint="@color/black"
+    android:imeOptions="actionNext"
+    android:inputType="textPersonName"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:textColor="@color/primary_text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.432"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.495" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/cm"-->
+<!--        android:layout_width="314dp"-->
+<!--        android:layout_height="92dp"-->
+<!--        android:background="@color/input_background"-->
+<!--        android:ems="10"-->
+<!--        android:hint="comment"-->
+<!--        android:imeOptions="actionNext"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:paddingStart="@dimen/_16sdp"-->
+<!--        android:paddingEnd="@dimen/_16sdp"-->
+<!--        android:textColor="@color/primary_text"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.432"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.658" />-->
+
+
+<Button
+    android:id="@+id/save_btn1"
+    android:layout_width="314dp"
+    android:layout_height="@dimen/_50sdp"
+    android:text="@string/save"
+    android:textColor="@color/white"
+    android:textSize="@dimen/_13ssp"
+    android:textStyle="bold"
+    app:cornerRadius="@dimen/_8sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.432"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.66" />
+
+<Button
+    android:id="@+id/discard1"
+    android:layout_width="314dp"
+    android:layout_height="@dimen/_50sdp"
+    android:text="Discard"
+    android:textColor="@color/white"
+    android:textSize="@dimen/_13ssp"
+    android:textStyle="bold"
+    app:cornerRadius="@dimen/_8sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.432"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.792" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
