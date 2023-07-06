@@ -152,6 +152,8 @@ public class Add_Info extends AppCompatActivity {
 
         //date, time ,systolic, diastolic, heart, comment
 
+        String valid_bit="v";
+
         userMap.put("date", date);
         userMap.put("time", time);
         userMap.put("systolic_pressure", systolic);
@@ -159,6 +161,8 @@ public class Add_Info extends AppCompatActivity {
         userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
         userMap.put("key", kkey);
+        userMap.put("emailkey", emailkey);
+        userMap.put("valid", valid_bit);
 
 
         /////////////////////////////////////////////////////////
