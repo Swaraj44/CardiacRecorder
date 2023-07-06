@@ -5,8 +5,7 @@ CardiacRecorder is an user friendly and efficient Android application that allow
 # Introduction
 
 - One need to keep the track of health with some indicators to stay confident about their health .'Cardiac Rcorder' keeps the data of every individual users and gives comment about their health accourding to the blood pressure and heart rate.
-- 
-- It is very useful for Health enthusiast and also who are careless about their CardioVascular Health
+- It is very useful for Health enthusiast and also who are careless about their CardioVascular Health.
 - We used the Firebase Realtime Database to store and sync data in real-time. Firebase Authentication is used to manage user authentication and access control in the app. When adding a new entry, the system captures the time and date for the corresponding entry from the device's system clock.
 
 ## Objectives
