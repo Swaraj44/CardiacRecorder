@@ -12,8 +12,8 @@ public class UnitTesting {
 
     @Test
     public void AdditionTest(){
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
 
@@ -26,8 +26,8 @@ public class UnitTesting {
 
     @Test
     public void DeletetionTest(){
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
         record.add(dd1);
@@ -41,8 +41,8 @@ public class UnitTesting {
 
     @Test
     public void TestAdditionException(){
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
         record.add(dd1);
@@ -56,8 +56,8 @@ public class UnitTesting {
 
     @Test
     public void TestDeletetionException(){
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
         record.add(dd1);
@@ -73,8 +73,8 @@ public class UnitTesting {
     @Test
     public void Test_Update() {
 
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
         record.add(dd1);
@@ -82,7 +82,7 @@ public class UnitTesting {
 
 
         DATA originaldata= record.getDatalist().get(0);
-        DATA updateddata = new DATA("1","2023-01-12","12:20","111","77","70","good");
+        DATA updateddata = new DATA("e1","1","2023-01-12","12:20","111","77","70","good","v");
         record.update(updateddata);
 
         assertTrue(record.getDatalist().contains(updateddata));
@@ -94,19 +94,19 @@ public class UnitTesting {
     @Test
     public void Test_Update_Exception() {
 
-        DATA dd1 = new DATA("1","2023-01-12","12:20","120","88","70","good");
-        DATA dd2 = new DATA("2","2023-02-13","12:40","121", "80","71","good");
+        DATA dd1 = new DATA("e1","1","2023-01-12","12:20","120","88","70","good","v");
+        DATA dd2 = new DATA("e1","2","2023-02-13","12:40","121", "80","71","good","v");
 
         DataList record = new DataList();
         record.add(dd1);
         record.add(dd2);
 
 
-        DATA data = new DATA("3","2023-01-12","12:20","111","77","70","good");
+        DATA data = new DATA("e1","3","2023-01-12","12:20","111","77","70","good","v");
         record.add(data);
 
         assertThrows(IllegalArgumentException.class, () -> {
-            DATA dd3 = new DATA("4","2023-02-13","12:45","131", "89","71","good");
+            DATA dd3 = new DATA("e1","4","2023-02-13","12:45","131", "89","71","good","v");
             record.update(dd3);
         });
     }
