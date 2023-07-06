@@ -2,6 +2,7 @@ package com.example.cardiacrecorder;
 
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -196,12 +197,8 @@ public class ActivityTest {
             e.printStackTrace();
         }
 
-        // Wait for the RecyclerView action to complete
-        try {
-            latch.await(5, TimeUnit.SECONDS); // Adjust the timeout as needed
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+
 
 
         onView(withId(R.id.delete)).perform(click());
@@ -212,6 +209,47 @@ public class ActivityTest {
         Espresso.onView(withId(R.id.systolic))
                 .check(doesNotExist());
 
+    }
+
+    @Test
+    public void testUpdateEntry(){
+        try {
+            Thread.sleep(4000); // Adjust the delay as needed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Create a CountDownLatch with a count of 1
+        final CountDownLatch latch = new CountDownLatch(1);
+
+
+
+        onView(withId(R.id.inputEmail)).perform(ViewActions.typeText("jobairnahian2017@gmail.com"));
+        onView(withId(R.id.inputPassword)).perform(ViewActions.typeText("12345678"));
+        onView(withId(R.id.buttonSignIn)).perform(click());
+
+        // Wait for the RecyclerView action to complete
+        try {
+            latch.await(5, TimeUnit.SECONDS); // Adjust the timeout as needed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withId(R.id.edit)).perform(click());
+        Espresso.onView(ViewMatchers.withId(R.id.systolic)).perform(clearText());
+        Espresso.onView(ViewMatchers.withId(R.id.diastolic)).perform(clearText());
+        Espresso.onView(ViewMatchers.withId(R.id.heart)).perform(clearText());
+
+        onView(withId(R.id.systolic)).perform(ViewActions.typeText("110"));
+        onView(withId(R.id.diastolic)).perform(ViewActions.typeText("50"));
+        onView(withId(R.id.heart)).perform(ViewActions.typeText("90"));
+        Espresso.pressBack();
+        onView(withId(R.id.save_btn1)).perform(click());
+
+
+        onView(withId(R.id.discard1)).perform(click());
+
+        onView(withText("110")).check(matches(isDisplayed()));
     }
 
 
