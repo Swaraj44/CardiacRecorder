@@ -200,7 +200,7 @@ android:layout_margin="10dp">
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/selete"
+                android:id="@+id/delete"
                 android:layout_width="110dp"
                 android:layout_height="@dimen/_50sdp"
                 android:text="DELETE"
