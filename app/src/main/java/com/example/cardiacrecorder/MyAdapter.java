@@ -2,6 +2,7 @@ package com.example.cardiacrecorder;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.textDiastolic.setText(item.getDiastolic_pressure());
         holder.textHeartRate.setText(item.getHeart_rate());
         holder.textcomment.setText(item.getComment());
+
+
+        holder.update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                Intent intent = new Intent(context, Update_Info.class);
+                intent.putExtra("kemailkey", item.getEmailkey());
+                intent.putExtra("kkey", item.getKey());
+                context.startActivity(intent);
+
+            }
+        });
 
 
 
