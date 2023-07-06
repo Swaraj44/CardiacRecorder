@@ -18,12 +18,12 @@ A mobile application for Android Users. Minimum Andorid 6 operating System is su
 <table>
   <tr> 
     <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/1.jpg" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/8124d1f7-44a4-4485-88da-49bee24035c5" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/a2a126bf-27d8-47b7-bcbd-2f8ebfda8208" height = "500px" width="250px"/></td>
+    <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/2.jpg" height = "500px" width="250px"/></td>
+    <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/3.jpg" height = "500px" width="250px"/></td>
   </tr>
   <tr> 
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/b543c11a-fd7e-49f6-ade6-5c659f541cec" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/190c7ada-f5eb-44a9-95e6-d3551d35a849" height = "500px" width="250px"/></td>
+    <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/4.jpg" height = "500px" width="250px"/></td>
+    <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/5.jpg" height = "500px" width="250px"/></td>
     <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/c62e9cba-18b1-44f3-816d-5714b7b822f2" height = "500px" width="250px"/></td>
   </tr>
   <tr> 
@@ -36,4 +36,4 @@ A mobile application for Android Users. Minimum Andorid 6 operating System is su
 
 ## More details
 
-More details about this android application project can be found <a href="https://github.com/Alastor7676/Cardiac-Recorder/wiki">here</a>
+More details about this android application project can be found <a href="">here</a>
