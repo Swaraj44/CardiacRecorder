@@ -95,7 +95,7 @@ public class Testing extends AppCompatActivity{
     private DatabaseReference rootST= db.getReference().child("EIMS").child("Result").child("Student");
 
 
-    private MyAdapter adapter;
+    private MyAdapter2 adapter;
     private ArrayList<DATA> list;
 
     @SuppressLint("MissingInflatedId")

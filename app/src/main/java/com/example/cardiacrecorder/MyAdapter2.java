@@ -24,13 +24,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
     ArrayList<DATA> mList;
     Context context;
-    private RecyclerViewClickListener itemClickListener;
+//    private RecyclerViewClickListener itemClickListener;
 
-    public MyAdapter2(Context context, ArrayList<DATA> mList,RecyclerViewClickListener itemClickListener){
+    public MyAdapter2(Context context, ArrayList<DATA> mList){
 
         this.mList = mList;
         this.context = context;
-        this.itemClickListener = itemClickListener;
+//        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -53,6 +53,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         holder.textDiastolic.setText(item.getDiastolic_pressure());
         holder.textHeartRate.setText(item.getHeart_rate());
         holder.textcomment.setText(item.getComment());
+
 
         holder.update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +116,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
         });
+
 
 
 
