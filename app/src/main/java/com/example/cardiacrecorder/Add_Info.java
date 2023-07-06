@@ -63,11 +63,15 @@ public class Add_Info extends AppCompatActivity {
         });
 
         backBtn.setOnClickListener(new View.OnClickListener() {
+            Bundle bb=getIntent().getExtras();
+            String email=bb.getString("xemail");
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Add_Info.this,Dash_Board.class);
-                startActivity(intent);
+               Intent intent = new Intent(Add_Info.this,Dash_Board.class);
+                intent.putExtra("email", email);
+              startActivity(intent);
                 finish();
+                //onBackPressed();
             }
         });
 
@@ -169,6 +173,8 @@ public class Add_Info extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(EmailKey).push();
 
+        String recordKey = root.getKey(); // Retrieve the generated record key
+        userMap.put("key", recordKey);
         root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
 
             @Override

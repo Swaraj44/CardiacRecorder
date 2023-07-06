@@ -163,12 +163,56 @@ android:layout_margin="10dp">
                 android:textColor="@color/teal_700"
                 android:textSize="17sp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/key"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+
+                android:textColor="@color/teal_700"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/edit"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="EDIT"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/_8sdp"
+                />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+
+                android:textColor="@color/teal_700"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/selete"
+                android:layout_width="110dp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="DELETE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/_8sdp"
+                />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

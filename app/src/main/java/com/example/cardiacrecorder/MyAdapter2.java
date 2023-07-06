@@ -1,10 +1,10 @@
 package com.example.cardiacrecorder;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -74,6 +74,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         TextView textHeartRate;
 
         TextView textcomment;
+
+        Button update, delete;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
