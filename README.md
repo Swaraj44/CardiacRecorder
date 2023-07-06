@@ -24,12 +24,12 @@ A mobile application for Android Users. Minimum Andorid 6 operating System is su
   <tr> 
     <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/4.jpg" height = "500px" width="250px"/></td>
     <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/5.jpg" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/c62e9cba-18b1-44f3-816d-5714b7b822f2" height = "500px" width="250px"/></td>
+    <td><img src = "" height = "500px" width="250px"/></td>
   </tr>
   <tr> 
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/4cd7fbca-b15e-42cb-8571-f1cc7805376c" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/c1400906-9e58-4445-958c-4d00eea223d7" height = "500px" width="250px"/></td>
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/38d06512-efed-4c19-b307-b11e422d38a0" height = "500px" width="250px"/></td>
+    <td><img src = "" height = "500px" width="250px"/></td>
+    <td><img src = "" height = "500px" width="250px"/></td>
+    <td><img src = "" height = "500px" width="250px"/></td>
   </tr>
 
 </table>
