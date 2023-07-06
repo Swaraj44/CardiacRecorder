@@ -31,7 +31,6 @@ A mobile application for Android Users. Minimum Andorid 6 operating System is su
   
 
 </table>
-![video6138575054255950671_AdobeExpress](https://github.com/Jobair2020/imageResourse/blob/main/overview.mp4)
 
 
 ## More details
