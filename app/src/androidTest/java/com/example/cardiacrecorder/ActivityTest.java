@@ -3,6 +3,7 @@ package com.example.cardiacrecorder;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -18,6 +19,7 @@ import androidx.test.espresso.Espresso;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.ViewAssertion;
 import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -168,5 +170,51 @@ public class ActivityTest {
         onView(withId(R.id.imageSignOut)).perform(click());
         onView(withId(R.id.welcomeText)).check(matches(isDisplayed()));
     }
+
+    @Test
+    public void testDeleteEntry(){
+
+        try {
+            Thread.sleep(4000); // Adjust the delay as needed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Create a CountDownLatch with a count of 1
+        final CountDownLatch latch = new CountDownLatch(1);
+
+
+
+        onView(withId(R.id.inputEmail)).perform(ViewActions.typeText("jobairnahian2017@gmail.com"));
+        onView(withId(R.id.inputPassword)).perform(ViewActions.typeText("12345678"));
+        onView(withId(R.id.buttonSignIn)).perform(click());
+
+        // Wait for the RecyclerView action to complete
+        try {
+            latch.await(5, TimeUnit.SECONDS); // Adjust the timeout as needed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Wait for the RecyclerView action to complete
+        try {
+            latch.await(5, TimeUnit.SECONDS); // Adjust the timeout as needed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        onView(withId(R.id.delete)).perform(click());
+
+        // Perform assertion after the RecyclerView action is completed
+        Espresso.onView(withId(R.id.recordRecyclerView))
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.systolic))
+                .check(doesNotExist());
+
+    }
+
+
+
 
 }
