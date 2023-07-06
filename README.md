@@ -17,7 +17,7 @@ A mobile application for Android Users. Minimum Andorid 6 operating System is su
 
 <table>
   <tr> 
-    <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/98891d66-5eda-4e3c-97fc-c9d9de5361fe" height = "500px" width="250px"/></td>
+    <td><img src = "https://github.com/Jobair2020/imageResourse/blob/main/1.jpg" height = "500px" width="250px"/></td>
     <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/8124d1f7-44a4-4485-88da-49bee24035c5" height = "500px" width="250px"/></td>
     <td><img src = "https://github.com/Alastor7676/Cardiac-Recorder/assets/52665240/a2a126bf-27d8-47b7-bcbd-2f8ebfda8208" height = "500px" width="250px"/></td>
   </tr>
