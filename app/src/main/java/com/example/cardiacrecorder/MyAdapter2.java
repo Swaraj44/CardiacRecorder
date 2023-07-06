@@ -7,11 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
     ArrayList<DATA> mList;
@@ -58,6 +66,54 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
                 context.startActivity(intent);
 
             }
+        });
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                HashMap<String, String> userMap = new HashMap<>();
+                String valid_bit="i";
+
+                userMap.put("date"," ");
+                userMap.put("time", " ");
+                userMap.put("systolic_pressure", " ");
+                userMap.put("diastolic_pressure", " ");
+                userMap.put("heart_rate", " ");
+                userMap.put("comment", " ");
+                userMap.put("key", item.getKey());
+                userMap.put("emailkey", item.getEmailkey());
+                userMap.put("valid", valid_bit);
+
+                String emailkey11=item.getEmailkey(),key11=item.getKey();
+
+
+                FirebaseDatabase db = FirebaseDatabase.getInstance();
+                DatabaseReference root = db.getReference().child("CardiacRecorder").child("UsersHistory").child(emailkey11).child(key11);
+
+                root.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(context, "Data Deleted!", Toast.LENGTH_SHORT).show();
+                        //mList.clear(); // Clear the existing dataset
+                                   // Add the new dataset
+                        //notifyDataSetChanged();
+                        Intent intent = new Intent(context, Dash_Board.class);
+                        intent.putExtra("email", item.getEmailkey());
+                        context.startActivity(intent);
+                    }
+                });
+
+
+
+            }
+
+
+
+
+
         });
 
 

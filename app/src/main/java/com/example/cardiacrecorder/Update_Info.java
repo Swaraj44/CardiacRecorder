@@ -129,10 +129,6 @@ public class Update_Info extends AppCompatActivity {
 
 
 
-
-        String kkey ="dummy";
-
-
         /////////////////////////////////////////////////////////////////////
         HashMap<String, String> userMap = new HashMap<>();
 
@@ -153,7 +149,7 @@ public class Update_Info extends AppCompatActivity {
         userMap.put("diastolic_pressure", diastolic);
         userMap.put("heart_rate", heart);
         userMap.put("comment", comment);
-        userMap.put("key", kkey);
+        userMap.put("key", key);
         userMap.put("emailkey", emailkey);
         userMap.put("valid", valid_bit);
 

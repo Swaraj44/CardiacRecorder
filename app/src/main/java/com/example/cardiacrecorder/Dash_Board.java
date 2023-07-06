@@ -190,10 +190,19 @@ public class Dash_Board extends AppCompatActivity implements RecyclerViewClickLi
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     DATA model = dataSnapshot.getValue(DATA.class);
 
+                     String valid ;
+                    valid= model.getValid();
+                    // Log.d("the model",model.toString());
 
-                    Toast.makeText(Dash_Board.this, "Checked!!", Toast.LENGTH_SHORT).show();
 
-                    list2.add(model);
+                   if (valid.equals("v")) {
+                      list2.add(model);
+
+                    }
+
+                    //Toast.makeText(Dash_Board.this, vv, Toast.LENGTH_SHORT).show();
+
+
 
 
                 }
